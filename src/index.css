@@ -4,7 +4,7 @@
 
 :root {
   /* Main Colors */
-  --color-primary: oklch(71% 0.15 215); /* cyan */
+  --color-primary: #00b7db; /* cyan */
   --color-secondary: oklch(59.558% 0.09632 189.496); /* teal */
   --color-pf: oklch(96% 0.002 240);
 
