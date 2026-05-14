@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Main Colors */
+  --color-primary: oklch(71% 0.15 215); /* cyan */
+  --color-secondary: oklch(59.558% 0.09632 189.496); /* teal */
+  --color-pf: oklch(96% 0.002 240);
+
+  /* Zinc Light Theme */
+  --color-background: oklch(98% 0.002 240);
+  --color-foreground: oklch(20% 0.01 240);
+
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(20% 0.01 240);
+
+  --color-muted: oklch(92% 0.004 240);
+  --color-muted-foreground: oklch(45% 0.01 240);
+
+  --color-border: oklch(85% 0.004 240);
+  --color-input: oklch(85% 0.004 240);
+
+  --color-ring: oklch(71% 0.15 215);
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --color-primary: oklch(71% 0.15 215); /* cyan */
+  --color-secondary: oklch(68% 0.11 190);
+  --color-pf: oklch(96% 0.002 240);
+  /* Zinc Dark Theme */
+  --color-background: oklch(14% 0.004 240);
+  --color-foreground: oklch(96% 0.002 240);
+
+  --color-card: oklch(18% 0.004 240);
+  --color-card-foreground: oklch(96% 0.002 240);
+
+  --color-muted: oklch(24% 0.004 240);
+  --color-muted-foreground: oklch(72% 0.01 240);
+
+  --color-border: oklch(28% 0.004 240);
+  --color-input: oklch(28% 0.004 240);
+
+  --color-ring: oklch(71% 0.15 215);
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-pf: var(--color-pf);
+
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+
+  --color-card: var(--color-card);
+  --color-card-foreground: var(--color-card-foreground);
+
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+
+  --color-border: var(--color-border);
+  --color-input: var(--color-input);
+
+  --color-ring: var(--color-ring);
+
+  --radius: var(--radius);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+
+    font-family: Inter, sans-serif;
+  }
+  
+}
+
+.secFont{
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .inputDate,
+.inputTime{
+  @apply bg-card border border-border rounded-xl px-4 py-3 text-sm outline-none;
+  
+  font-family: 'Inter', sans-serif;
+
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.inputDate:focus,
+.inputTime:focus{
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary) 20%, transparent);
+
+}
+.dark input::-webkit-calendar-picker-indicator{
+  filter: invert(1);
+}
+
+input:invalid{
+  border-color: #ef4444; /* red */
+  box-shadow: 0 0 0 4px rgb(239 68 68 / 0.15);
+}
+
